@@ -29,36 +29,80 @@ $koneksi->close();
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: white;
         }
         h1 {
             text-align: center;
             color: red;
             font-weight: 600;
         }
-        .detail {
+        table {
             width: 80%;
             margin: 20px auto;
-            padding: 20px;
+            border-collapse: collapse;
             border: 1px solid white;
-            border-radius: 5px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid white;
+            text-align: center;
+        }
+        th {
+            background-color: pink;
+            color: white;
+        }
+        td {
+            background-color: white;
+        }
+        .center {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 15px;
+            background-color: pink;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: darkred;
         }
     </style>
 </head>
 <body>
     <h1>Detail Peserta</h1>
-    <div class="detail">
-        <p><strong>Nama:</strong> <?php echo $pendataan['nama']; ?></p>
-        <p><strong>Umur:</strong> <?php echo $pendataan['umur']; ?></p>
-        <p><strong>Jenis Kelamin:</strong> <?php echo $pendataan['jenis_kelamin'] == 'l' ? 'Laki-laki' : 'Perempuan'; ?></p>
-        <p><strong>Nomor Telepon:</strong> <?php echo $pendataan['telp']; ?></p>
-        <p><strong>Alamat:</strong> <?php echo $pendataan['alamat']; ?></p>
-        <p><strong>Nomor Bootcamp:</strong> <?php echo $pendataan['nomor_bootcamp']; ?></p>
-        <p><strong>Nama Bootcamp:</strong> <?php echo $pendataan['nama_bootcamp']; ?></p>
-        <p><strong>Jadwal Kelas:</strong> <?php echo $pendataan['jadwal_kelas']; ?></p>
-    </div>
-    <div style="text-align: center;">
+
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>Umur</th>
+            <th>Jenis Kelamin</th>
+            <th>Nomor Telepon</th>
+            <th>Alamat</th>
+            <th>Nomor Bootcamp</th>
+            <th>Nama Bootcamp</th>
+            <th>Jadwal Kelas</th>
+        </tr>
+        <tr>
+            <td><?php echo $pendataan['nama']; ?></td>
+            <td><?php echo $pendataan['umur']; ?></td>
+            <td><?php echo $pendataan['jenis_kelamin'] == 'l' ? 'Laki-laki' : 'Perempuan'; ?></td>
+            <td><?php echo $pendataan['telp']; ?></td>
+            <td><?php echo $pendataan['alamat']; ?></td>
+            <td><?php echo $pendataan['nomor_bootcamp']; ?></td>
+            <td><?php echo $pendataan['nama_bootcamp']; ?></td>
+            <td><?php echo $pendataan['jadwal_kelas']; ?></td>
+        </tr>
+    </table>
+
+    <div class="center">
         <a href="index.php" class="button">Kembali</a>
+        <a href="kelas_pagi.php?id=<?php echo $id; ?>" class="button">Kelas Pagi</a>
+        <a href="kelas_siang.php?id=<?php echo $id; ?>" class="button">Kelas Siang</a>
     </div>
 </body>
 </html>

@@ -50,9 +50,14 @@ include 'koneksi.php';
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .button:active {
+            transform: scale(0.95);
+            background-color: red;
         }
         .button:hover {
-            background-color: pink;
+            background-color: red;
         }
     </style>
 </head>

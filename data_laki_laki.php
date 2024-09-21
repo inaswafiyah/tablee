@@ -1,6 +1,3 @@
-<?php
-include 'koneksi.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +13,7 @@ include 'koneksi.php';
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: red;
         }
         table {
             width: 80%;
@@ -41,6 +38,7 @@ include 'koneksi.php';
         tr:hover {
             background-color: white;
         }
+
         .button {
             padding: 8px 12px;
             background-color: pink;
@@ -49,9 +47,17 @@ include 'koneksi.php';
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
         }
+ 
         .button:hover {
-            background-color: pink;
+            background-color: red;
+            transform: scale(1.05);
+        }
+      
+        .button:active {
+            background-color: red;
+            transform: scale(0.95);
         }
         .back-button {
             display: block;
@@ -63,6 +69,18 @@ include 'koneksi.php';
             color: white;
             border-radius: 5px;
             text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+  
+        .back-button:hover {
+            background-color: red;
+           
+        }
+       
+        .back-button:active {
+            background-color: red;
+            transform: scale(0.95);
         }
     </style>
 </head>
@@ -79,6 +97,7 @@ include 'koneksi.php';
           <th>Opsi</th>
         </tr>
         <?php
+        include 'koneksi.php';
         $data_laki_laki = mysqli_query($koneksi, "SELECT * FROM peserta WHERE jenis_kelamin = 'l'");
         while($pendataan = mysqli_fetch_array($data_laki_laki)){
             ?>
